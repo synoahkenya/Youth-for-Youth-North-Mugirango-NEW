@@ -44,14 +44,9 @@ header.site-header {
 }
 
 .site-header img.logo {
-  height: 130px;
+  height: 100px;
   width: auto;
 }
-<button class="menu-toggle" aria-label="Toggle navigation">
-  <span class="bar"></span>
-  <span class="bar"></span>
-  <span class="bar"></span>
-</button>
 
 .site-nav a {
   color: var(--navy);
@@ -195,58 +190,6 @@ footer.site-footer {
   transform: translateY(-4px);
   opacity: 0.95;
 }
-
-/* ---------- RESPONSIVE ---------- */
-/* ---------- RESPONSIVE NAV FOR MOBILE ---------- */
-@media (max-width: 768px) {
-  /* show the hamburger icon */
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* hide the nav by default */
-  .site-nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #f2f2f2; /* your grey header color */
-    flex-direction: column;
-    align-items: center;
-    display: none; /* hidden until active */
-    border-top: 2px solid rgba(0,0,0,0.05);
-    padding-bottom: 10px;
-  }
-
-  /* show nav when toggled */
-  .site-nav.active {
-    display: flex;
-    animation: fadeIn 0.3s ease-in;
-  }
-
-  /* make links stack vertically */
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    color: var(--navy);
-  }
-}
-
-/* smooth animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-<script>
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.site-nav');
-
-menuToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
-</script>
 
   header.site-header {
     padding: 12px;
