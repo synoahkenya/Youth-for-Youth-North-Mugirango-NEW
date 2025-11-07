@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(rgba(248,249,250,0.7), rgba(248,249,250,0.9)),
+  background: linear-gradient(rgba(248,249,250,0.5), rgba(248,249,250,0.6)),
     url('../img/background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--text);
@@ -23,7 +23,7 @@ body {
 .container {
   max-width: 1000px;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.6);
   padding: 28px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
@@ -63,7 +63,7 @@ header.site-header {
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(90deg, rgba(229,9,20,0.9), rgba(0,35,102,0.9));
+  background: linear-gradient(90deg, rgba(229,9,20,0.5), rgba(0,35,102,0.6));
   color: white;
   border-radius: 8px;
 }
@@ -183,11 +183,7 @@ footer.site-footer {
 }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 720px) {
-  .site-nav {
-    display: none;
-  }
-
+@media (max-width: 720px) 
   header.site-header {
     padding: 12px;
   }
