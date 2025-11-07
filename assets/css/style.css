@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(rgba(248,249,250,0.5), rgba(248,249,250,0.6)),
+  background: linear-gradient(rgba(248,249,250,0.9), rgba(248,249,250,0.9)),
     url('../img/background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--text);
@@ -23,101 +23,180 @@ body {
 .container {
   max-width: 1000px;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.95);
   padding: 28px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
-/* ---------- MODERN HEADER & NAV ---------- */
+
+/* ---------- HEADER ---------- */
 header.site-header {
-  background: #fff;
-  color: var(--navy);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 16px;
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.header-left img.logo {
-  height: 100px; /* adjust for your preferred logo size */
-  width: auto;
-}
-
-.site-nav {
   display: flex;
-  gap: 10px;
-}
-
-.nav-link {
-  color: var(--navy);
-  text-decoration: none;
-  padding: 8px 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.nav-link:hover {
-  background: var(--red);
-  color: #fff;
-}
-
-/* ---------- HAMBURGER MENU ---------- */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
-.menu-toggle .bar {
-  height: 3px;
+.site-header img.logo {
+  height: 56px;
+}
+
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.site-nav a.active {
+  outline: 3px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, rgba(229,9,20,0.9), rgba(0,35,102,0.9));
+  color: white;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.hero p.lead {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* ---------- HEADINGS ---------- */
+h2 {
+  color: var(--red);
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+section {
+  margin-top: 18px;
+}
+
+/* ---------- FORM STYLES ---------- */
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-row .col {
+  flex: 1;
+  min-width: 180px;
+}
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
   width: 100%;
-  background-color: var(--navy);
-  border-radius: 3px;
-  transition: 0.3s;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-/* ---------- RESPONSIVE NAV ---------- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+button.cta {
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
 
+button.cta:hover {
+  background: var(--red);
+}
+
+/* ---------- FOOTER ---------- */
+footer.site-footer {
+  text-align: center;
+  padding: 18px;
+  background: var(--navy);
+  color: #fff;
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+/* ---------- FLOATING CONTACT ICONS ---------- */
+.floating-contact {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1200;
+}
+
+.float-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.phone {
+  background-color: #007AFF;
+}
+
+.gmail {
+  background-color: #EA4335;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.float-btn:hover {
+  transform: translateY(-4px);
+  opacity: 0.95;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 720px) {
   .site-nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
     display: none;
-    border-top: 2px solid rgba(0,0,0,0.05);
   }
 
-  .site-nav.active {
-    display: flex;
-    animation: fadeIn 0.3s ease-in;
+  header.site-header {
+    padding: 12px;
   }
 
-  .nav-link {
-    width: 90%;
-    text-align: center;
-    padding: 14px;
+  .hero {
+    padding: 40px 14px;
+  }
+
+  .container {
+    margin: 10px;
   }
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
