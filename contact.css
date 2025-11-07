@@ -1,10 +1,11 @@
+/* Floating Contact Buttons */
 .floating-contact {
   position: fixed;
   bottom: 25px;
   right: 25px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   z-index: 1000;
 }
 
@@ -22,10 +23,10 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.whatsapp { background-color: #25D366; }
-.phone { background-color: #007BFF; }
-.gmail { background-color: #EA4335; }
-.facebook { background-color: #1877F2; }
+.whatsapp { background-color: #25D366; }    /* WhatsApp green */
+.phone    { background-color: #007AFF; }    /* iPhone call blue */
+.gmail    { background-color: #EA4335; }    /* Gmail red */
+.facebook { background-color: #1877F2; }    /* Facebook blue */
 
 .float-btn:hover {
   transform: scale(1.1);
