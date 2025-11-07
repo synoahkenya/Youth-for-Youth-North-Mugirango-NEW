@@ -31,8 +31,8 @@ body {
 
 /* ---------- HEADER ---------- */
 header.site-header {
-  background: var(--navy);
-  color: #fff;
+  background: #ffffff;         /* white header background */
+  color: var(--navy);          /* navy blue text */
   padding: 10px 16px;
   position: sticky;
   top: 0;
@@ -40,6 +40,7 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid rgba(0,0,0,0.05); /* subtle line below header */
 }
 
 .site-header img.logo {
@@ -47,7 +48,7 @@ header.site-header {
 }
 
 .site-nav a {
-  color: #fff;
+  color: var(--navy);          /* make links navy */
   text-decoration: none;
   margin: 0 10px;
   font-weight: 600;
