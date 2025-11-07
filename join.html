@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home - Youth For Youth</title>
+<title>Join - Youth For Youth</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -13,10 +13,10 @@
     <div style="color:#fff;font-weight:700">Youth For Youth - North Mugirango</div>
   </div>
   <nav class="site-nav">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" >Home</a>
     <a href="about.html" >About</a>
     <a href="agenda.html" >5-Point Agenda</a>
-    <a href="join.html" >Join</a>
+    <a href="join.html" class="active">Join</a>
     <a href="announcements.html" >Announcements</a>
     <a href="contact.html" >Contact</a>
   </nav>
@@ -24,20 +24,19 @@
 
 <main class="container">
 
-<div class="hero">
-  <h1>YOUTH FOR YOUTH - NORTH MUGIRANGO</h1>
-  <p class="lead"><strong>Empowering Youth, Building a Better Tomorrow — Wakati ni wa vijana, komokomo mbaka engori!</strong></p>
-  <p style="margin-top:12px;color:#fff;opacity:0.95">Join us to build skills, opportunity and a voice for every young person.</p>
-</div>
-
 <section>
-  <h2>Welcome</h2>
-  <p>We are a youth-led movement standing for practical change, dignity of youth and community-driven solutions in North Mugirango. Explore our agenda, join the movement, or contact us directly.</p>
-</section>
-
-<section>
-  <h2>Latest Announcement</h2>
-  <p>Digital movement launch: <strong>13 / 12 / 2025</strong> (Google Meet). Link to be shared via WhatsApp.</p>
+  <h2>Join the Movement (Membership Registration)</h2>
+  <form action="#" onsubmit="alert('Thanks — your form was submitted (demo).'); return false;">
+    <div class="form-row">
+      <div class="col"><input type="text" placeholder="Full Name" required></div>
+      <div class="col"><select required><option value="">Select Your Ward</option><option>Itibo</option><option>Ekerenyo</option><option>Magwagwa</option><option>Bokeira</option><option>Bomwagamo</option></select></div>
+    </div>
+    <div class="form-row" style="margin-top:12px">
+      <div class="col"><input type="tel" placeholder="Phone Number" required></div>
+      <div class="col"><input type="text" placeholder="Occupation (optional)"></div>
+    </div>
+    <div style="margin-top:12px"><button class="cta" type="submit">Submit</button></div>
+  </form>
 </section>
 
 </main>
