@@ -31,26 +31,35 @@ body {
 
 /* ---------- HEADER ---------- */
 header.site-header {
-  background: var(--navy);
-  color: #fff;
-  padding: 10px 16px;
+  background: #f2f2f2;  /* modern light grey */
+  color: var(--navy);   /* navy text to match your theme */
+  padding: 12px 24px;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid rgba(0,0,0,0.05); /* subtle separator */
 }
 
 .site-header img.logo {
-  height: 56px;
+  height: 130px;
+  width: auto;
 }
 
 .site-nav a {
-  color: #fff;
+  color: var(--navy);
   text-decoration: none;
   margin: 0 10px;
   font-weight: 600;
+}
+.site-nav a:hover {
+  background: #e50914; /* bright red hover */
+  color: #fff;          /* white text when hovered */
+  border-radius: 8px;   /* optional: rounded effect */
+  padding: 8px 14px;    /* optional: better spacing */
+  transition: 0.3s;     /* smooth animation */
 }
 
 .site-nav a.active {
