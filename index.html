@@ -87,9 +87,14 @@
 </main>
 
 <footer class="site-footer">
-  Gmail: nmugirangoyouthforyouth@gmail.com • WhatsApp: +254743638162<br>
-  Komokomo Mbaka Engori! © 2025
+  <div class="footer-inner">
+    <p id="live-datetime" class="footer-datetime">Loading current date & time...</p>
+    <p class="footer-copy">
+      © <span id="year"></span> Youth for Youth North Mugirango. All Rights Reserved.
+    </p>
+  </div>
 </footer>
+
 
 <!-- Floating contact icons -->
 <div class="floating-contact">
@@ -124,6 +129,18 @@ function updateCounter() {
 }
 
 window.addEventListener('load', updateCounter);
+</script>
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateStr = now.toLocaleDateString(undefined, options);
+    const timeStr = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    document.getElementById('live-datetime').textContent = `${dateStr} — ${timeStr}`;
+    document.getElementById('year').textContent = now.getFullYear();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
 </script>
 
 </body>
