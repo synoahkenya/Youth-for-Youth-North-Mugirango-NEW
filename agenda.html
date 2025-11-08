@@ -30,6 +30,115 @@
   <h1>My Prayer For The People of North Mugirango</h1>
   <p class="lead">Building a future where the youth rise, families thrive, and every voice matters.</p>
 </div>
+<!-- ===== MAP OF NORTH MUGIRANGO ===== -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<section id="map-section" class="container">
+  <h2>Map of North Mugirango Wards</h2>
+  <p class="lead">Explore our five wards—click each color zone or marker to learn more.</p>
+  <div id="leaflet-map" style="height:450px;border-radius:10px;"></div>
+</section>
+
+<script>
+// --- Initialize map ---
+const map = L.map("leaflet-map").setView([0.82, 34.75], 10);
+
+// --- Base layer ---
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap contributors",
+}).addTo(map);
+
+// --- Ward polygons (approximate) ---
+const wards = [
+  {
+    name: "Magwagwa Ward",
+    color: "#FF4C4C",
+    polygon: [
+      [0.87, 34.66],
+      [0.88, 34.71],
+      [0.83, 34.72],
+      [0.81, 34.68],
+    ],
+    marker: [0.847, 34.690],
+    info: "Known for agriculture and youth innovation programs.",
+  },
+  {
+    name: "Bomwagamo Ward",
+    color: "#1E90FF",
+    polygon: [
+      [0.83, 34.73],
+      [0.85, 34.78],
+      [0.81, 34.80],
+      [0.79, 34.75],
+    ],
+    marker: [0.810, 34.780],
+    info: "Home to vibrant youth leadership and sports groups.",
+  },
+  {
+    name: "Itibo Ward",
+    color: "#32CD32",
+    polygon: [
+      [0.86, 34.80],
+      [0.88, 34.85],
+      [0.84, 34.86],
+      [0.82, 34.82],
+    ],
+    marker: [0.850, 34.830],
+    info: "Cultural heart with active community outreach.",
+  },
+  {
+    name: "Bokeira Ward",
+    color: "#FFD700",
+    polygon: [
+      [0.80, 34.81],
+      [0.82, 34.85],
+      [0.78, 34.86],
+      [0.76, 34.82],
+    ],
+    marker: [0.780, 34.830],
+    info: "Emerging education and tech initiatives.",
+  },
+  {
+    name: "Ekerenyo Ward",
+    color: "#FF69B4",
+    polygon: [
+      [0.82, 34.70],
+      [0.83, 34.74],
+      [0.79, 34.74],
+      [0.78, 34.70],
+    ],
+    marker: [0.800, 34.740],
+    info: "Administrative center and Youth for Youth HQ.",
+  },
+];
+
+// --- Draw polygons + markers ---
+wards.forEach((w) => {
+  L.polygon(w.polygon, {
+    color: w.color,
+    fillColor: w.color,
+    fillOpacity: 0.3,
+    weight: 2,
+  })
+    .addTo(map)
+    .bindPopup(`<b>${w.name}</b><br>${w.info}`);
+
+  const pin = L.icon({
+    iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [0, -30],
+  });
+
+  L.marker(w.marker, { icon: pin })
+    .addTo(map)
+    .bindPopup(`<b>${w.name}</b><br>${w.info}`);
+});
+</script>
 
 <section>
   <h2>1. Youth Empowerment & Leadership</h2>
