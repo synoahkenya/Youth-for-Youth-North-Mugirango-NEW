@@ -151,6 +151,66 @@ button.cta:hover {
   font-size: 20px;
   color: var(--text);
 }
+#nomination {
+  margin-top: 40px;
+  background: rgba(242, 242, 242, 0.8);
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+#nomination h2 {
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#nomination .lead {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.nomination-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nomination-form label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.nomination-form input,
+.nomination-form select,
+.nomination-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.nomination-form textarea {
+  resize: vertical;
+}
+
+.nomination-form .cta {
+  background-color: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.nomination-form .cta:hover {
+  background-color: #004080;
+}
 
 /* ---------- FOOTER ---------- */
 footer.site-footer {
