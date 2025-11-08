@@ -30,6 +30,17 @@
   <h2>Announcements & News</h2>
   <article>
     <h3>Digital Movement Launch</h3>
+    <section id="launch-countdown" class="container" style="text-align:center;">
+  <h2>Countdown to Our Official Launch</h2>
+  <div id="countdown" class="countdown">
+    <div><span id="days">0</span><small>Days</small></div>
+    <div><span id="hours">0</span><small>Hours</small></div>
+    <div><span id="minutes">0</span><small>Minutes</small></div>
+    <div><span id="seconds">0</span><small>Seconds</small></div>
+  </div>
+  <p class="lead">Stay tuned for something amazing!</p>
+</section>
+
     <p>Date: <strong>13 / 12 / 2025</strong></p>
     <p>We will host a virtual launch on Google Meet. Link to be shared via local WhatsApp groups. Stay tuned.</p>
   </article>
@@ -61,6 +72,37 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#1877F2"/><path d="M15 8h-1.5c-.6 0-1 .4-1 1V9.5H15v1.8h-2.5V20H10v-7.7H7.8V11H10V9.4c0-1.9 1.2-2.9 3-2.9H15V8z" fill="#fff"/></svg>
   </a>
 </div>
+<script>
+// --- Countdown Timer ---
+const countdown = () => {
+  const launchDate = new Date("December 15, 2025 10:00:00").getTime();
+  const now = new Date().getTime();
+  const gap = launchDate - now;
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  const days = Math.floor(gap / day);
+  const hours = Math.floor((gap % day) / hour);
+  const minutes = Math.floor((gap % hour) / minute);
+  const seconds = Math.floor((gap % minute) / second);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+
+  if (gap < 0) {
+    document.getElementById("countdown").innerHTML = "<h3>We’ve launched! 🎉</h3>";
+    clearInterval(interval);
+  }
+};
+
+const interval = setInterval(countdown, 1000);
+countdown();
+</script>
 
 </body>
 </html>
