@@ -37,6 +37,38 @@
   <p>I am <strong>Onuko Graham</strong> from Kiomanga Village, Bokeira Ward, <strong>OMOMURA BWE'RIROBA </strong>and I am proud to declare my candidacy for <strong>Member of Parliament for North Mugirango Constituency, 2027</strong>. I know our community; its challenges, its dreams, and its immense potential and I am stepping forward not for politics, but for the people.</p>
    <p> I vow to shelf my ambitions and support any youthful leader with morals, agenda and vision for our homeland if need be.We must stay united by purpose.</p>
 </section>
+<!-- ===== WARD REPRESENTATIVE NOMINATION SECTION ===== -->
+<section id="nomination" class="container">
+  <h2>Ward Representatives Nomination</h2>
+  <p class="lead">
+    We are inviting passionate and active members from each ward in North Mugirango
+    to apply for nomination as <strong>Youth for Youth Ward Representatives/Campaign Strategists</strong>.
+    Selection will be based on your personal bio and reason for interest.
+  </p>
+
+  <form id="nominationForm" action="https://formspree.io/f/mwpaekog" method="POST" class="nomination-form">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+    <label for="ward">Ward:</label>
+    <select id="ward" name="ward" required>
+      <option value="">-- Select Your Ward --</option>
+      <option value="Magwagwa">Magwagwa</option>
+      <option value="Bomwagamo">Bomwagamo</option>
+      <option value="Itibo">Itibo</option>
+      <option value="Bokeira">Bokeira</option>
+      <option value="Ekerenyo">Ekerenyo</option>
+    </select>
+
+    <label for="bio">Personal Bio:</label>
+    <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..." required></textarea>
+
+    <label for="interest">Reason for Interest:</label>
+    <textarea id="interest" name="interest" rows="4" placeholder="Why do you want to represent your ward?" required></textarea>
+
+    <button type="submit" class="cta">Submit Application</button>
+  </form>
+</section>
 
 </main>
 
