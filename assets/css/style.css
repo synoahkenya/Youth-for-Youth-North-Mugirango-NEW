@@ -332,5 +332,41 @@ footer.site-footer {
   .countdown span {
     font-size: 22px;
   }
+/* Moving words ticker */
+.moving-words {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(242,242,242,0.6); /* subtle band - change if needed */
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 18s linear infinite;
+  padding: 10px 0;
+  font-weight:700;
+  color: var(--navy);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 15px;
+}
+.ticker span { display:inline-block; padding:0 8px; }
+
+/* pause on hover/focus for accessibility */
+.moving-words:hover .ticker,
+.moving-words:focus-within .ticker {
+  animation-play-state: paused;
+}
+
+/* keyframes */
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* -50% works because we duplicated content */
+}
+
+/* smaller text on mobile */
+@media (max-width:720px){
+  .ticker { font-size: 13px; animation-duration: 20s; }
+}
 
  
