@@ -29,9 +29,11 @@
 <section>
   <h2>Stand to Be Counted! (Membership Registration)</h2>
     <!-- 🔹 Live Join Counter -->
-  <div id="join-count" style="background:#002366;color:white;padding:10px 16px;border-radius:6px;margin-bottom:16px;text-align:center;font-weight:bold;">
-    Current Members Joined: <span id="count">742</span>
-  </div>
+ <section id="counter-section" class="container" style="text-align:center;">
+  <h2>Our Growing Movement</h2>
+  <p class="lead">Together we are <span id="memberCount" class="counter">800</span> strong!</p>
+</section>
+
 <form action="https://formspree.io/f/mwpaekog" method="POST">
   <div class="form-row">
     <div class="col"><input type="text" name="name" placeholder="Full Name" required></div>
@@ -99,6 +101,25 @@ form.addEventListener("submit", async (e) => {
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#1877F2"/><path d="M15 8h-1.5c-.6 0-1 .4-1 1V9.5H15v1.8h-2.5V20H10v-7.7H7.8V11H10V9.4c0-1.9 1.2-2.9 3-2.9H15V8z" fill="#fff"/></svg>
   </a>
 </div>
+<script>
+// Simple animated counter
+const countElement = document.getElementById('memberCount');
+let count = 0;
+const target = 1250; // Set your goal number here
+const speed = 20; // Lower = faster
+
+function updateCounter() {
+  if (count < target) {
+    count += Math.ceil((target - count) / 20);
+    countElement.textContent = count.toLocaleString();
+    setTimeout(updateCounter, speed);
+  } else {
+    countElement.textContent = target.toLocaleString();
+  }
+}
+
+window.addEventListener('load', updateCounter);
+</script>
 
 </body>
 </html>
