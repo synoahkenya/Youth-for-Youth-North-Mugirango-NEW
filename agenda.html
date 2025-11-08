@@ -60,9 +60,14 @@
 </main>
 
 <footer class="site-footer">
-  Gmail: nmugirangoyouthforyouth@gmail.com • WhatsApp: +254743638162<br>
-  Komokomo Mbaka Engori! © 2025
+  <div class="footer-inner">
+    <p id="live-datetime" class="footer-datetime">Loading current date & time...</p>
+    <p class="footer-copy">
+      © <span id="year"></span> Youth for Youth North Mugirango. All Rights Reserved.
+    </p>
+  </div>
 </footer>
+
 
 <!-- Floating contact icons -->
 <div class="floating-contact">
@@ -79,6 +84,18 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#1877F2"/><path d="M15 8h-1.5c-.6 0-1 .4-1 1V9.5H15v1.8h-2.5V20H10v-7.7H7.8V11H10V9.4c0-1.9 1.2-2.9 3-2.9H15V8z" fill="#fff"/></svg>
   </a>
 </div>
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateStr = now.toLocaleDateString(undefined, options);
+    const timeStr = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    document.getElementById('live-datetime').textContent = `${dateStr} — ${timeStr}`;
+    document.getElementById('year').textContent = now.getFullYear();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>
 
 </body>
 </html>
