@@ -220,3 +220,56 @@ footer.site-footer {
     margin: 10px;
   }
 }
+/* ---------- COUNTDOWN STYLES ---------- */
+#launch-countdown {
+  margin-top: 40px;
+  background: rgba(242, 242, 242, 0.7);
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+
+#launch-countdown h2 {
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.countdown div {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 12px;
+  width: 70px;
+}
+
+.countdown span {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.countdown small {
+  display: block;
+  font-size: 12px;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .countdown {
+    gap: 10px;
+  }
+  .countdown div {
+    width: 55px;
+    padding: 8px;
+  }
+  .countdown span {
+    font-size: 22px;
+  }
+}
