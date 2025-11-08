@@ -332,41 +332,60 @@ footer.site-footer {
   .countdown span {
     font-size: 22px;
   }
-/* Moving words ticker */
+/* Moving words - robust cross-browser ticker */
 .moving-words {
   width: 100%;
   overflow: hidden;
-  background: rgba(242,242,242,0.6); /* subtle band - change if needed */
+  background: rgba(242,242,242,0.6);
   border-bottom: 1px solid rgba(0,0,0,0.04);
 }
-.ticker {
-  display: inline-block;
+
+.moving-words .ticker {
+  display: flex;
+  align-items: center;
+  /* ensure the ticker contents take natural width */
   white-space: nowrap;
   will-change: transform;
+  /* animation (duration adjust as needed) */
   animation: scroll-left 18s linear infinite;
-  padding: 10px 0;
-  font-weight:700;
+  -webkit-animation: scroll-left 18s linear infinite;
+  gap: 40px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-weight: 700;
   color: var(--navy);
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 15px;
 }
-.ticker span { display:inline-block; padding:0 8px; }
 
-/* pause on hover/focus for accessibility */
+/* Each track holds one full repetition */
+.moving-words .track {
+  display: inline-flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* keyframes: translate entire ticker left by half its width (one track) */
+@keyframes scroll-left {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@-webkit-keyframes scroll-left {
+  0%   { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(-50%); }
+}
+
+/* pause animation on hover or keyboard focus for accessibility */
 .moving-words:hover .ticker,
 .moving-words:focus-within .ticker {
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
-/* keyframes */
-@keyframes scroll-left {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); } /* -50% works because we duplicated content */
+/* smaller font on mobile */
+@media (max-width:720px) {
+  .moving-words .ticker { font-size: 13px; animation-duration: 20s; -webkit-animation-duration:20s; }
 }
 
-/* smaller text on mobile */
-@media (max-width:720px){
-  .ticker { font-size: 13px; animation-duration: 20s; }
-}
 
  
