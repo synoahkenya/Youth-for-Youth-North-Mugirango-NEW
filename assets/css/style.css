@@ -332,4 +332,31 @@ footer.site-footer {
   .countdown span {
     font-size: 22px;
   }
+/* ===============================
+   🕒 LIVE FOOTER DATETIME + COPYRIGHT
+   =============================== */
+.site-footer {
+  background: #111;
+  color: #eee;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 3px solid #ff8c00; /* Fire accent */
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-datetime {
+  font-size: 15px;
+  color: #ffcc66;
+  margin-bottom: 8px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #bbb;
+}
 
