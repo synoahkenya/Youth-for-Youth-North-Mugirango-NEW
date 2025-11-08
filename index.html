@@ -37,11 +37,48 @@
   <h2>Welcome</h2>
   <p>We are a youth-led movement standing for practical change, dignity of youth and community-driven solutions in North Mugirango, our Nation and beloved Africa. Explore our agenda, join the movement, or contact us directly.</p>
 </section>
-
-<section>
-  <h2>Latest Announcement</h2>
-  <p>Digital movement launch: <strong>13 / 12 / 2025</strong> (Google Meet). Link to be shared via WhatsApp.</p>
+<section class="agenda-preview container">
+  <h2>Our Focus</h2>
+  <div class="cards">
+    <div class="card">
+      <i class="fa fa-graduation-cap"></i>
+      <h3>Education</h3>
+      <p>Empowering every youth with skills for the future.</p>
+    </div>
+    <div class="card">
+      <i class="fa fa-seedling"></i>
+      <h3>Agriculture</h3>
+      <p>Supporting agribusiness and food sustainability.</p>
+    </div>
+    <div class="card">
+      <i class="fa fa-briefcase"></i>
+      <h3>Employment</h3>
+      <p>Creating opportunities through innovation.</p>
+    </div>
+  </div>
+  <a href="agenda.html" class="cta">See All</a>
 </section>
+
+<section class="news-preview container">
+  <h2>Latest Updates</h2>
+  <article>
+    <h3>Youth for Youth Launch Countdown Begins</h3>
+    <p>The official launch of our initiative is set for December 13th — join us in shaping our future!</p>
+    <a href="announcements.html">Read More →</a>
+  </article>
+</section>
+<section class="testimonials container">
+  <h2>What Our Members Say</h2>
+  <blockquote>
+    “We cant allow the corrupt to divide us, lets support our energetic young leaders.”
+    <cite>– Jane, Magwagwa Ward</cite>
+  </blockquote>
+</section>
+<section id="counter-section" class="container" style="text-align:center;">
+  <h2>Umoja Ni Nguvu, Utengano Ni Udhaifu</h2>
+  <p>Tumefika Jumla ya <span id="memberCount" class="counter">0</span> Salaale, Mwendo wa kasi huu!</p>
+</section>
+
 
 </main>
 
@@ -65,6 +102,25 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#1877F2"/><path d="M15 8h-1.5c-.6 0-1 .4-1 1V9.5H15v1.8h-2.5V20H10v-7.7H7.8V11H10V9.4c0-1.9 1.2-2.9 3-2.9H15V8z" fill="#fff"/></svg>
   </a>
 </div>
+<script>
+// Simple animated counter
+const countElement = document.getElementById('memberCount');
+let count = 0;
+const target = 900; // Set your goal number here
+const speed = 100; // Lower = faster
+
+function updateCounter() {
+  if (count < target) {
+    count += Math.ceil((target - count) / 20);
+    countElement.textContent = count.toLocaleString();
+    setTimeout(updateCounter, speed);
+  } else {
+    countElement.textContent = target.toLocaleString();
+  }
+}
+
+window.addEventListener('load', updateCounter);
+</script>
 
 </body>
 </html>
