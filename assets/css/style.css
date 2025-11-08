@@ -272,20 +272,5 @@ footer.site-footer {
   .countdown span {
     font-size: 22px;
   }
-}
-#map-section {
-  margin-top: 40px;
-  background: rgba(242, 242, 242, 0.7);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-#map-section h2 {
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-#map-section p.lead {
-  font-size: 16px;
-  color: var(--text);
-  margin-bottom: 12px;
-}
+
+ 
